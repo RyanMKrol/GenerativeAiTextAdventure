@@ -1,6 +1,7 @@
 package com.ryankrol.genaitextadventure;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,6 +13,9 @@ import java.util.Scanner;
 
 @Component
 public class ReplCommandLineRunner implements CommandLineRunner {
+
+    @Value("${apikey.openai}")
+    private String openAiApiKey;
 
     @Autowired
     private ApplicationContext context;
@@ -37,6 +41,7 @@ public class ReplCommandLineRunner implements CommandLineRunner {
             System.out.print("\033[H");
 
             System.out.println(content);
+            System.out.println(openAiApiKey);
 
             String input;
 
