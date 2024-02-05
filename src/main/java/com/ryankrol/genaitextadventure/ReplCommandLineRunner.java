@@ -6,8 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.util.Scanner;
 import java.io.InputStream;
+import java.util.Scanner;
 
 
 @Component
@@ -30,15 +30,15 @@ public class ReplCommandLineRunner implements CommandLineRunner {
         try (Scanner scanner = new Scanner(inputStream)) {
             final String content = resourceReader.readFileAsString("./screens/start.txt");
 
-            String input;
             // ANSI escape sequence to clear the screen
             System.out.print("\033[H\033[2J");
 
             // Move the cursor to the top-left corner (optional)
             System.out.print("\033[H");
 
-            System.out.println("Welcome to MyREPL. Type 'exit' to quit.");
             System.out.println(content);
+
+            String input;
 
             while (true) {
                 System.out.print("> ");
