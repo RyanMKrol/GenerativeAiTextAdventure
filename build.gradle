@@ -24,3 +24,9 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.register('runRepl', JavaExec) {
+	mainClass = 'com.ryankrol.genaitextadventure.Application'
+	classpath = sourceSets.main.runtimeClasspath
+	standardInput = System.in
+}
