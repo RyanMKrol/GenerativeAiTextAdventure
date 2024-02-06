@@ -1,0 +1,41 @@
+{
+    "id": "31911849-fd4a-4981-9077-4bc190646d5d",
+    "description": "You find yourself standing in a small clearing within a dense and whispering forest. The air is cool and damp, carrying the scent of moss and old leaves. Before you, shrouded in a thick mist, stands an imposing house with tall, narrow windows and a steeply pitched roof. Its walls are covered in dark ivy, and the wooden door at the front looks ancient, creaking on its hinges as if moved by an unseen hand. The house exudes an eerie atmosphere, and the surrounding trees seem to lean away from it, as though in fear. The only sound is the soft whisper of the wind, occasionally punctuated by the distant call of a raven. Despite the foreboding aura, something compels you to investigate further.",
+    "items": [
+        {
+            "id": "6db3b29a-7ba3-45aa-b4cd-9e8260146c57",
+            "name": "rusty key",
+            "description": "An ancient, corroded key, its surface etched with intricate patterns, hinting at long-lost secrets and doors yet to be unlocked.",
+            "prerequisites": ["071decb5-0ac6-4931-b006-587feb0304de"],
+            "supportedActions": [
+                {
+                    "name": "pick up",
+                    "result": "You bend down and pick up the key, feeling its cold, metal edges against your skin. You wonder what secrets it might unlock."
+                },
+                {
+                    "name": "leave",
+                    "result": "You decide to leave the key where it is, perhaps it's best not to disturb things left behind."
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "id": "68e958a9-cd75-4451-9a49-56018d07c0eb",
+            "name": "approach the house",
+            "result": "With a mixture of curiosity and apprehension, you step towards the house. Each step seems to echo louder than the last, as if the forest itself is holding its breath.",
+            "next": "front of house uuid"
+        },
+        {
+            "id": "f1269687-a433-472e-acf5-28a131519982",
+            "name": "explore the forest",
+            "result": "You turn away from the house to explore the surrounding forest. The trees seem to close in around you, their branches casting long shadows.",
+            "next": "forest uuid"
+        },
+        {
+            "id": "071decb5-0ac6-4931-b006-587feb0304de",
+            "name": "look around",
+            "result": "As you take a moment to survey your surroundings more closely, your eyes catch a glint of metal among the leaves at your feet. It's a rusty key, partially buried under the foliage. Its presence here is curious and out of place."
+        }
+    ]
+}
