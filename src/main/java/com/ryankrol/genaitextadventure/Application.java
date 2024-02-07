@@ -1,5 +1,7 @@
 package com.ryankrol.genaitextadventure;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,4 +25,11 @@ public class Application {
 		return System.in;
 	}
 
+	@Bean
+	public ObjectMapper objectMapper() {
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.enable(SerializationFeature.INDENT_OUTPUT); // Enable pretty printing
+
+		return objectMapper;
+	}
 }

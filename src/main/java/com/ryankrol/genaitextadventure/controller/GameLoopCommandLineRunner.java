@@ -1,4 +1,4 @@
-package com.ryankrol.genaitextadventure;
+package com.ryankrol.genaitextadventure.controller;
 
 import com.ryankrol.genaitextadventure.lib.JsonResourceReader;
 import com.ryankrol.genaitextadventure.lib.StringUtils;
@@ -7,16 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
-
 @Component
+@Profile("!test") // Setting up the REPL in the tests really screws with the Spring context, so we just don't do it
 public class GameLoopCommandLineRunner implements CommandLineRunner {
-
     @Autowired
     private ApplicationContext context;
 
@@ -30,7 +30,7 @@ public class GameLoopCommandLineRunner implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         try (Scanner scanner = new Scanner(inputStream)) {
             // ANSI escape sequence to clear the screen
             System.out.print("\033[H\033[2J");
